@@ -39,5 +39,10 @@ public class AuthorsController implements AuthorsNamespace {
                         .toUri()
                 ).build();
     }
-}
 
+    @DeleteMapping("{authorId}")
+    public ResponseEntity<Author> delete(@PathVariable Long authorId) {
+        authorRepository.deleteById(authorId);
+        return ResponseEntity.noContent().build();
+    }
+}
