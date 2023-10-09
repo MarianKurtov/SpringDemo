@@ -41,22 +41,3 @@ public class BookControllers implements AuthorsNamespace {
                 .orElseGet(()-> ResponseEntity.notFound().build());
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
