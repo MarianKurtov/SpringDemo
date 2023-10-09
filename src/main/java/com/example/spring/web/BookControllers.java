@@ -5,6 +5,7 @@ import com.example.spring.model.Book;
 import com.example.spring.repository.AuthorRepository;
 import com.example.spring.repository.BookRepository;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("*")
 public class BookControllers implements AuthorsNamespace {
 
     private final BookRepository bookRepository;
