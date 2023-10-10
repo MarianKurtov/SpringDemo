@@ -1,9 +1,11 @@
-package com.example.spring.web;
+package com.example.spring.controller;
 
+import com.example.spring.exception.HelloException;
 import com.example.spring.model.Author;
 import com.example.spring.repository.AuthorRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
@@ -45,5 +47,10 @@ public class AuthorsController implements AuthorsNamespace {
     public ResponseEntity<Author> delete(@PathVariable Long authorId) {
         authorRepository.deleteById(authorId);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/error1")
+    public ModelAndView crashMe() {
+        throw new HelloException("I crashed!");
     }
 }
